@@ -66,8 +66,8 @@ df.to_csv('homes_inspected.csv', index=False)
 
 #Adding a new column at the end to the current data 
 
-Import panda as pd
-df = pd.read_csv(''filename.csv')
+Import pandas as pd
+df = pd.read_csv('filename.csv')
 df['Inspected'] = 'false'
 df.to_csv('homes_inspected.csv', index=False)
 
