@@ -7,7 +7,7 @@ listOfLines = fileHandler.readlines()
 # Close file
 fileHandler.close()
 
-# Iterate over the lines, strip() is used to remove the empty lines inbetween the lines
+# Iterate over the lines, strip() is used to the empty lines inbetween the lines
 for line in listOfLines:
     print(line.strip())
    
@@ -179,6 +179,145 @@ if os.path.exists(filePath):
 else:
     print("Can not delete the file as it doesn't exists")
 
+#similar to os.remove we os module has another function that's os.ulink
+
+import os 
+# Handle errors while calling os.ulink()
+try:
+    os.ulink(filePath)
+except:
+    print("Error while deleting file ", filePath)
 
 
+#Check if a file is empty using os.stat() in Python
+
+import os
+file_path = 'mysample.txt'
+# check if size of file is 0
+if os.stat(file_path).st_size == 0:
+    print('File is empty')
+else:
+    print('File is not empty')
+
+
+
+# other method of checking the file size 
+
+import os
+file_path = 'mysample.txt'
+if os.path.getsize(file_path) == 0:
+    print('File is empty')
+else:
+    print('File is not empty')
+    
+    
+#First check if the file exists or not 
+
+import os
+def is_file_empty(file_path):
+    return os.path.exists(file_path) and os.stat(file_path).st_size == 0
+    
+file_path = 'mysample.txt'
+
+is_empty = is_file_empty(file_path)
+
+if is_empty:
+    print('File is empty')
+else:
+    print('File is not empty')
+
+# or 
+
+#First check if the file exists or not 
+
+import os
+def is_file_empty(file_path):
+    return os.path.exists(file_path) and os.path.getsize(file_path) == 0
+    
+file_path = 'mysample.txt'
+
+is_empty = is_file_empty(file_path)
+
+if is_empty:
+    print('File is empty')
+else:
+    print('File is not empty')
+    
+    
+
+# Get Last Modification date & time of a file.
+
+#os.path.getmtime(path)
+import os
+import stat
+import time
+import datetime
+
+modTimesinceEpoc = os.path.getmtime(filePath)
+modificationTime = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(modTimesinceEpoc))
+print("Last Modified Time : ", modificationTime )
+
+
+#Otherway get time modified the file
+# Convert seconds since epoch to Date only
+modTimesinceEpoc = os.path.getmtime(filePath)
+modificationTime = time.strftime('%d/%m/%Y', time.localtime(modTimesinceEpoc))
+print("Last Modified Time : ", modificationTime )
+
+#otherway Get time modified the file
+modTimesinceEpoc = os.path.getmtime(filePath)
+modificationTime = datetime.datetime.fromtimestamp(modTimesinceEpoc).strftime('%Y-%m-%d %H:%M:%S')
+print("Last Modified Time : ", modificationTime )
+
+#Time in UTC time
+modTimesinceEpoc = os.path.getmtime(filePath)
+modificationTime = datetime.datetime.utcfromtimestamp(modTimesinceEpoc).strftime('%Y-%m-%d %H:%M:%S')
+print("Last Modified Time : ", modificationTime , ' UTC')
+
+
+#Append text or lines to a file
+
+# Open a file with access mode 'a'
+file_object = open('sample.txt', 'a')
+# Append 'hello' at the end of file
+file_object.write('hello')
+# Close the file
+file_object.close()
+
+
+#Append a text to file in Python using ‘with open’ statement
+with open('sample.txt', 'a') as file_object:
+    file_object.write("hello")
+    
+#Append data to a file as a new line
+
+# Open the file in append & read mode ('a+')
+with open("sample2.txt", "a+") as file_object:
+    # Move read cursor to the start of file.
+    file_object.seek(0)
+    # If file is not empty then append '\n'
+    data = file_object.read(100)
+    if len(data) > 0 :
+        file_object.write("\n")
+    # Append text at the end of file
+    file_object.write("hello hi")
+    
+    
+#append in function:
+
+def append_new_line(file_name, text_to_append):
+    """Append given text as a new line at the end of file"""
+    # Open the file in append & read mode ('a+')
+    with open(file_name, "a+") as file_object:
+        # Move read cursor to the start of file.
+        file_object.seek(0)
+        # If file is not empty then append '\n'
+        data = file_object.read(100)
+        if len(data) > 0:
+            file_object.write("\n")
+        # Append text at the end of file
+        file_object.write(text_to_append)
+        
+       
+#Delete a line from a file by specific line number
 
