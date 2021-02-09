@@ -1,0 +1,62 @@
+#Local variable vs Global variable:
+
+#Local variable is a variable that is defined in a function and global variable is a variable that is defined outside any function or class i.e. in
+#global space. Global variable is accessible in any function and local variable has scope only in the function it is defined.
+
+# Global variable
+total = 100
+def test():
+    # Local variable
+    marks = 19
+    print('Marks = ', marks)
+    print('Total = ', total)
+
+-------------------------------
+
+total = 100
+def func():
+    # refer to global variable 'total' inside function
+    global total
+    if total > 10:
+        total = 15
+print('Total = ', total)
+func()
+print('Total = ', total)
+
+#pass multiple arguments to function: *args
+
+def calculateAverage(*args):
+    ''' Calculates the average of n numbers | Accepts variable length arguments '''
+    # get the number of total arguments passed 
+    argCount = len(args)
+    if argCount > 0 :
+        sumOfNums = 0
+        # Iterate over all the arguments and calculate average
+        for elem in args :
+            sumOfNums += elem
+        return sumOfNums / argCount
+    else:
+        return 0
+        
+#Positioning of parameter *args
+
+def publishError(startStr, endStr, *args):
+    ''' Publish n number of Error | | Accepts variable length arguments
+        formal parameters '''
+    print(startStr)
+    for elem in args :
+        print("Error : " , elem)
+    print(endStr)
+
+
+publishError("[Start]" , "[End]" , "Invalid params", "Unknown Error")
+
+#>Output
+[Start]
+Error :  Invalid params
+Error :  Unknown Error
+[End]
+
+
+
+
