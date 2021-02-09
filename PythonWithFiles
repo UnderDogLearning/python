@@ -162,3 +162,23 @@ for elem in matched_lines:
     print('Word = ', elem[0], ' :: Line Number = ', elem[1], ' :: Line = ', elem[2])
     
     
+#remove a file 
+
+
+import os
+# Remove a file
+os.remove('/home/somedir/Documents/python/logs')
+
+
+#Remove a file if exists using os.remove()
+import os
+filePath = '/home/somedir/Documents/python/logs';
+# As file at filePath is deleted now, so we should check if file exists or not not before deleting them
+if os.path.exists(filePath):
+    os.remove(filePath)
+else:
+    print("Can not delete the file as it doesn't exists")
+
+
+
+
