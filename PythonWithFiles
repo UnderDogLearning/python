@@ -319,5 +319,5 @@ def append_new_line(file_name, text_to_append):
         file_object.write(text_to_append)
         
        
-#Delete a line from a file by specific line number
+#Add a column to an existing CSV file
 
