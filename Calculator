@@ -1,77 +1,66 @@
-#Calculator using Python
-# Make sure the Indentations are correct while coping 
-
 def addition():
-  print("Addition")
-  n = float(input("Enter the number: ")
-  t = 0
-  ans = 0
-  while n != 0:
-    ans =  ans + n
-    t += 1
-    n = float(input(" Enter Another Number or 0 to calculate: ")
-  return [ans,t]
+    print("Addition")
+    n = float(input("Enter the number: "))
+    t = 0 
+    ans = 0
+    while n != 0:
+        ans += n
+        t+=1
+        n = float(input("Enter another number (0 to calculate): "))
+    return [ans,t]
+def subtraction():
+    print("Subtraction");
+    n = float(input("Enter the number: "))
+    t = 0
+    ans = 0
+    sum = 0
+    while n != 0:
+        ans -= n
+        t+=1
+        n = float(input("Enter another number (0 to calculate): "))
+    return [ans,t]
+def multiplication():
+    print("Multiplication")
+    n = float(input("Enter the number: "))
+    t = 0
+    ans = 1
+    while n != 0:
+        ans *= n
+        t+=1
+        n = float(input("Enter another number (0 to calculate): "))
+    return [ans,t]
+def average():
+    an = []
+    an = addition()
+    t = an[1]
+    a = an[0]
+    ans = a / t
+    return [ans,t]
 
-def substraction():
-  print("Substraction")
-  n = float(input("Enter the Number: ")
-  t = 0
-  ans = 0
-  while n != 0:
-    ans = ans - n
-    t += 1
-    n = float(input("Enter Another Number of 0 to calculate: ")
-  return [ans,t]
-  
-def mutiplication():
-  print("mutiplication")
-  n = float(input("Enter the Number")
-  ans = 0
-  t = 0
-  while n != 0:
-    ans = ans * n
-    t += 1
-    n = float(input("Enter Another Number or 0 to calculate: ")
-  return [ans,t]
-    
- def avarage():
-  print("avarage)
-  an = []
-  an = addition()
-  Numbers_Count = an[1]
-  Sum_Numbers = an[0]
-  ans = Sum_Numbers/Numbers_Count
-  return [ans,Numbers_Count]
-    
-#Main...
 while True:
-  list =[]
-  print("Python Calculator")
-  print("Python by Arjun Rajapeta")
-  print("Enter 'a' for addition")
-  print("Enter 's' for substraction")
-  print("Enter 'm' for mutiplication")
-  print("Enter 'v' for avarage")
-  print("Enter 'q' for quit")
-  what = input("")
-  if what != 'q':
-    if what == a:
-      list = addition()
-      print("Ans =", list[0], "total inputs ",list[1]) 
-    elif what == s:
-      list = substraction()
-      print("Ans =", list[0], "total inputs ",list[1])
-    elif what == m:
-      list = mutiplication()
-      print("Ans =", list[0], "total inputs ",list[1])
-    elif what == v:
-      list = avarage()
-      print("Ans =", list[0], "total inputs ",list[1])
+    list = []
+    print(" My first python program!")
+    print(" Calculator by Arjun Rajapeta")
+    print(" Enter 'a' for addition")
+    print(" Enter 's' for substraction")
+    print(" Enter 'm' for multiplication")
+    print(" Enter 'v' for average")
+    print(" Enter 'q' for quit")
+    c = input(">>")
+    if c != 'q':
+        if c == 'a':
+            list = addition()
+            print("Ans = ", list[0], " total inputs ",list[1])
+        elif c == 's':
+            list = subtraction()
+            print("Ans = ", list[0], " total inputs ",list[1])
+        elif c == 'm':
+            list = multiplication()
+            print("Ans = ", list[0], " total inputs ",list[1])
+        elif c == 'v':
+            list = average()
+            print("Ans = ", list[0], " total inputs ",list[1])
+        else:
+            print ("Sorry, invilid character")
     else:
-      print("SORRY, INVALID CHARACTER")
-  else:
-    break   
-    
-      
-      
-  
+        break
