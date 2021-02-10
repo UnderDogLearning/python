@@ -4,8 +4,8 @@
 def addition():
   print("Addition")
   n = float(input("Enter the number: ")
-  ans = 0
   t = 0
+  ans = 0
   while n != 0:
     ans =  ans + n
     t += 1
@@ -15,8 +15,8 @@ def addition():
 def substraction():
   print("Substraction")
   n = float(input("Enter the Number: ")
-  ans = 0
   t = 0
+  ans = 0
   while n != 0:
     ans = ans - n
     t += 1
