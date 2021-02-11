@@ -18,7 +18,7 @@ import random
 
 def phn():
     p=list('0000000000')
-    p[0] = '9'
+    p[0] = '9' """random first number -- str(random.randint(1,9))"""
     for i in [1,2,6,7,8]:
         p[i] = str(random.randint(0,9))
     for i in [3,4]:
