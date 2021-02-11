@@ -54,7 +54,7 @@ for element in jsonDict:
     
     #print(jsonDict[i])
     print("""""")
-    print(record)
+    print(f"Record Number: {record}")
     record += 1
     #print(element)
     if (isinstance(element, dict)):
