@@ -1,3 +1,13 @@
+Some of the commonly used built-in modules are:
+
+os
+sys
+math
+random
+data time
+JSON
+
+
 #python
 #Reading a file (.csv) using panda
 """Sample data"""
